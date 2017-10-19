@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import { Text } from 'react-native'
 import shallowCompare from 'react-addons-shallow-compare'
 import { AllHtmlEntities } from 'html-entities'
