@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Text } from 'react-native'
-import shallowCompare from 'react-addons-shallow-compare'
 import { AllHtmlEntities } from 'html-entities'
 
 const RE = Object.freeze({
@@ -22,7 +21,7 @@ const PRE_TAG_NAMES = [
   'pre', 'code'
 ].reduce((acc, n) => { acc.add(n); return acc }, new Set())
 
-class HTMLTextNode extends React.Component {
+class HTMLTextNode extends PureComponent {
   /* ****************************************************************************/
   // Class
   /* ****************************************************************************/
@@ -59,15 +58,7 @@ class HTMLTextNode extends React.Component {
       }
     }
   }
-
-  /* ****************************************************************************/
-  // Data Lifecycle
-  /* ****************************************************************************/
-
-  shouldComponentUpdate (nextProps, nextState) {
-    return shallowCompare(this, nextProps, nextState)
-  }
-
+  
   /* ****************************************************************************/
   // Rendering
   /* ****************************************************************************/
